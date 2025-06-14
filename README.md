@@ -123,10 +123,10 @@ FIREBASE_API_KEY=your-firebase-api-key
 ![Homepage](src/assets/Home%20Page.png)
 
 ### 💬 Chat Interface
-![Chat](screenshots/chat.png)
+![Chat](src/assets/Chat.png)
 
 ### 🔍 Product Search
-![Search](screenshots/search.png)
+![Search](src/assets/Search%20Engin.png)
 
 ---
 

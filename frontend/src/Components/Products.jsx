@@ -1,48 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { FaTimes } from "react-icons/fa";
 
-const products = [
-  {
-    id: 1,
-    title: "AI Chatbot",
-    desc: "An intelligent chatbot that helps you answer questions in real-time.",
-    price: "$99",
-    duration: "2 Weeks",
-    stock: "Available",
-    images: [
-      "/src/assets/Logo.png",
-      "https://via.placeholder.com/300x200?text=Chatbot+2",
-      "/src/assets/Logo.png",
-    ],
-  },
-  {
-    id: 2,
-    title: "Data Dashboard",
-    desc: "Visualize insights using clean and powerful dashboards.",
-    price: "$199",
-    duration: "3 Weeks",
-    stock: "Available",
-    images: [
-      "/src/assets/Logo.png",
-      "https://via.placeholder.com/300x200?text=Dashboard+2",
-      "/src/assets/Logo.png",
-    ],
-  },
-  // Add more as needed
-];
-
 const Products = () => {
+  const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  // Fetch products from the backend API
+  useEffect(() => {
+    axios.get("http://localhost:5000/api/products")
+      .then((res) => setProducts(res.data))
+      .catch((err) => console.error("Error fetching products:", err));
+  }, []);
 
   const openDialog = (product) => {
     setSelectedProduct(product);
     setActiveImageIndex(0);
   };
 
-  const closeDialog = () => {
-    setSelectedProduct(null);
-  };
+  const closeDialog = () => setSelectedProduct(null);
 
   const nextImage = () => {
     setActiveImageIndex((prev) =>
@@ -58,30 +35,34 @@ const Products = () => {
 
   return (
     <div className="py-12 px-6 md:px-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      {products.map((product) => (
-        <div
-          key={product.id}
-          className="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-xl transition duration-300 group"
-        >
-          <img
-            src={product.images[0]}
-            alt={product.title}
-            className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-          <div className="p-4">
-            <h2 className="text-xl font-semibold mb-2 group-hover:text-green-600 transition">
-              {product.title}
-            </h2>
-            <p className="text-gray-600 mb-4">{product.desc}</p>
-            <button
-              onClick={() => openDialog(product)}
-              className="inline-block px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
-            >
-              Details
-            </button>
+      {products.length === 0 ? (
+        <p className="col-span-full text-center text-gray-500">Loading products...</p>
+      ) : (
+        products.map((product) => (
+          <div
+            key={product._id}
+            className="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-xl transition duration-300 group"
+          >
+            <img
+              src={product.images[0]}
+              alt={product.title}
+              className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="p-4">
+              <h2 className="text-xl font-semibold mb-2 group-hover:text-green-600 transition">
+                {product.title}
+              </h2>
+              <p className="text-gray-600 mb-4">{product.desc}</p>
+              <button
+                onClick={() => openDialog(product)}
+                className="inline-block px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+              >
+                Details
+              </button>
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      )}
 
       {/* 🪟 Dialog Box */}
       {selectedProduct && (
@@ -104,18 +85,12 @@ const Products = () => {
             <div className="p-4">
               <p className="text-gray-700 mb-4">{selectedProduct.desc}</p>
               <div className="grid grid-cols-2 gap-4 mb-6">
-                <p>
-                  <strong>Price:</strong> {selectedProduct.price}
-                </p>
-                <p>
-                  <strong>Duration:</strong> {selectedProduct.duration}
-                </p>
-                <p>
-                  <strong>Stock:</strong> {selectedProduct.stock}
-                </p>
+                <p><strong>Price:</strong> {selectedProduct.price}</p>
+                <p><strong>Duration:</strong> {selectedProduct.duration}</p>
+                <p><strong>Stock:</strong> {selectedProduct.stock}</p>
               </div>
 
-              {/* Slider */}
+              {/* Image Slider */}
               <div className="relative mb-4">
                 <img
                   src={selectedProduct.images[activeImageIndex]}

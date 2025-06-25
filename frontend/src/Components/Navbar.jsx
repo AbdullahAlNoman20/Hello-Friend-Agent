@@ -24,6 +24,12 @@ const Navbar = () => {
           Home
         </Link>
         <Link
+          to="/add-product"
+          className="hover:text-gray-400 hover:underline duration-200"
+        >
+          Add Product
+        </Link>
+        <Link
           to="/about"
           className="hover:text-gray-400 hover:underline duration-200"
         >

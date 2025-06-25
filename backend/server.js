@@ -22,18 +22,28 @@ mongoose.connect(process.env.MONGO_URI, {
 const productSchema = new mongoose.Schema({
   title: String,
   desc: String,
-  price: String,
-  duration: String,
-  stock: String,
-  images: [String]
+  hashtags: [String],
+   price: String,     
+  duration: String,   
+  stock: String,      
+  images: [String],
 });
 
 const Products = mongoose.model("Products", productSchema);
 
-// Sample route
-app.get("/", (req, res) => {
-  res.send("API Running");
+
+// ✅ Add new POST route
+app.post("/api/products", async (req, res) => {
+  try {
+    const newProduct = new Products(req.body);
+    await newProduct.save();
+    res.status(201).json({ message: "Product created", product: newProduct });
+  } catch (err) {
+    res.status(500).json({ message: "Error creating product", error: err.message });
+  }
 });
+
+
 
 // ✅ API to Get Products from Database
 app.get("/api/products", async (req, res) => {
@@ -43,6 +53,31 @@ app.get("/api/products", async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: "Server error", error: err.message });
   }
+});
+
+// ✅ Search Products by Hashtag
+app.get("/api/products/search", async (req, res) => {
+  const { query } = req.query;
+
+  if (!query) {
+    return res.status(400).json({ message: "Missing search query" });
+  }
+
+  try {
+    const regex = new RegExp(query, "i"); // Case-insensitive regex match
+    const results = await Products.find({ hashtags: { $in: [regex] } });
+    res.json(results);
+  } catch (err) {
+    res.status(500).json({ message: "Search error", error: err.message });
+  }
+});
+
+
+
+
+// Sample route
+app.get("/", (req, res) => {
+  res.send("API Running");
 });
 
 // Start Server

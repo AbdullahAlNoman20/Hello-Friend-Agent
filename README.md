@@ -1,35 +1,33 @@
 
 # Hello Friend - Intelligent AI Assistant
 
-📌 Project Description – Hello Friend AI Agent Website
-The Hello Friend AI Agent is a web-based platform designed to offer a seamless and interactive user experience by integrating AI-driven features with essential e-commerce functionalities. The current version of the system includes the following key components:
+📌 **Project Description**
 
-✅ Key Features:
-Chat Interface (AI Agent)
+**Hello Friend AI Agent** is a full-stack intelligent assistant platform built to merge AI-powered interactions with dynamic product discovery. This web app combines smart UI/UX design with powerful backend features including MongoDB integration, user roles, and product recommendation engines.
 
-Users can initiate a conversation with the AI agent through a chat window.
+> "Your Friendly AI-Powered Product Assistant."
 
-The system currently responds with a placeholder message: “Under maintenance”, indicating that the conversational engine is being developed for future intelligent interaction.
+---
 
-Product Search Functionality
+## ✅ Features
 
-Users can search for products using keywords.
+### 🤖 Conversational AI Chatbot
 
-The search feature is designed to provide relevant product listings based on user queries.
+- Interactive floating chat window.
+- Currently under development ("System under maintenance" message placeholder).
+- Future: Natural language understanding using LLMs (e.g., OpenAI, Gemini).
 
-Product Recommendation Section
+### 🔍 Magnetic Product Search Engine
 
-A dedicated section on the homepage showcases recommended products.
+- Hashtag-based live search suggestions.
+- Auto-debounced search execution.
+- Intelligent product display with image fallback and hashtags.
+- Product details modal with all product metadata.
 
-Users can click on items to view detailed product information through the Product Details Page.
+### 🛒 Product Recommendation Section
 
-User Authentication System
-
-Includes Login and Registration pages to ensure secure access and personalized user experiences.
-
-About Page
-
-Provides background information about the Hello Friend AI Agent project, its purpose, and future scope.
+- Displays smart recommendations on homepage.
+- Individual product cards with hover effect and modal view.
 
 ⚙️ Technology Stack (Current Implementation):
 Frontend: React.js with Tailwind CSS and DaisyUI
@@ -159,13 +157,13 @@ FIREBASE_API_KEY=your-firebase-api-key
 > **Add your screenshots inside `/screenshots` folder and reference them below:**
 
 ### 🖥️ Homepage
-![Homepage](src/assets/Home%20Page.png)
+![Homepage](src/assets/Home%20Page.jpg)
 
 ### 💬 Chat Interface
-![Chat](src/assets/Chat.png)
+![Chat](src/assets/ChatBot.png)
 
 ### 🔍 Product Search
-![Search](src/assets/Search%20Engin.png)
+![Search](src/assets/Search.png)
 
 ---
 
@@ -204,6 +202,27 @@ Thanks to all the open-source packages and tools that made this project possible
 
 ---
 
-## 👤 Author
-**Abdullah Al Noman**  
-[LinkedIn](https://www.linkedin.com/in/abdullah-al-noman-khu/) | [GitHub](https://github.com/AbdullahAlNoman20)
+## 👤 Author / Developer Info
+
+**Abdullah Al Noman**🎓 Data Scientist | Web Developer | AI Enthusiast📍 Khulna, Bangladesh
+
+🔗 [LinkedIn](https://www.linkedin.com/in/abdullah-al-noman-khu/)💻 [GitHub](https://github.com/AbdullahAlNoman20)🌐 Portfolio (Coming Soon)
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## 🙏 Acknowledgments
+
+- React & Tailwind Team
+- Firebase & MongoDB for free tiers
+- All open-source contributors
+- ChatGPT for design and development guidance
+
+---
+
+> Happy Coding & Stay Friendly with "Hello Friend" 🤝

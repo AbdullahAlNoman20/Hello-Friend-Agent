@@ -157,13 +157,13 @@ FIREBASE_API_KEY=your-firebase-api-key
 > **Add your screenshots inside `/screenshots` folder and reference them below:**
 
 ### 🖥️ Homepage
-![Homepage](src/assets/Home%20Page.jpg)
+![Homepage](/frontend/src/assets/Home%20Page.jpg)
 
 ### 💬 Chat Interface
-![Chat](src/assets/ChatBot.png)
+![Chat](/frontend/src/assets/ChatBot.png)
 
 ### 🔍 Product Search
-![Search](src/assets/Search.png)
+![Search](/frontend/src/assets/Search.png)
 
 ---
 

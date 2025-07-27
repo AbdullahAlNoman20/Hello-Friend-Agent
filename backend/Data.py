@@ -2,8 +2,8 @@ import csv
 import json
 
 # Load CSV and convert to JSON
-csv_file = 'backend/product_data_mongodb.csv'
-json_file = 'your_data.json'
+csv_file = 'backend/products.csv'
+json_file = 'Converted-Data.json'
 
 data = []
 

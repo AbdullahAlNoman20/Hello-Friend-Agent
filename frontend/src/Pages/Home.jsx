@@ -15,7 +15,7 @@ const Home = () => {
     const updatedChat = [
       ...chatHistory,
       { sender: "user", text: userMessage },
-      { sender: "system", text: "🚧 Our assistant is currently under maintenance. We'll be back soon!" },
+      { sender: "system", text: "The System is Under Maintenance" },
     ];
     setChatHistory(updatedChat);
     setUserMessage("");

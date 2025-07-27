@@ -5,6 +5,7 @@ import About from "./Pages/About";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import AddProduct from "./Pages/AddProduct";
+import EmotionTester from "./Pages/EmotionTester"; 
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="add-product" element={<AddProduct />} />
+        <Route path="test-emotion" element={<EmotionTester />} />
       </Route>
     </Routes>
   );

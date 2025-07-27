@@ -10,6 +10,7 @@ const Navbar = () => {
 
   const navLinks = [
     { path: "/", label: "Home", title: "Go to Homepage" },
+    { path: "/test-emotion", label: "ChatBot", title: "Go to ChatBOT" },
     { path: "/add-product", label: "Add Product", title: "Post a New Product" },
     { path: "/about", label: "About", title: "Know About Us" },
     { path: "/login", label: "Login", title: "Login to your Account" },

@@ -2,3 +2,8 @@ flask
 flask-cors
 joblib
 scikit-learn
+pandas
+
+
+#  Install with pip install -r requirements.txt
+

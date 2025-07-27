@@ -1,51 +1,38 @@
-# ml-model/app.py
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import joblib
 
 app = Flask(__name__)
-CORS(app)  # Allow cross-origin (from React)
+CORS(app)  # allows requests from React
 
-# Load pre-trained emotion model
-model = joblib.load('model.pkl')  # make sure model.pkl exists
+# Load your ML model (replace with your actual file)
+model = joblib.load("model.pkl")
+vectorizer = joblib.load("vectorizer.pkl")
 
-@app.route('/predict', methods=['POST'])
-def predict_emotion():
-    data = request.get_json()
-    text = data.get('text')
 
-    if not text:
-        return jsonify({'error': 'No text provided'}), 400
+@app.route("/predict", methods=["POST"])
+def predict():
+    try:
+        data = request.get_json()
+        print("Received data:", data)
 
-    # Predict using the ML model
-    prediction = model.predict([text])[0]
+        text = data.get("text", "")
+        if not text:
+            return jsonify({"error": "No text provided"}), 400
 
-    return jsonify({'emotion': prediction})
+        # Transform and predict
+        text_vector = vectorizer.transform([text])
+        prediction = model.predict(text_vector)[0]
+        print("Prediction:", prediction)
 
-if __name__ == '__main__':
-    app.run(port=5000, debug=True)
-# ml-model/app.py
-from flask import Flask, request, jsonify
-from flask_cors import CORS
-import joblib
+        return jsonify({"emotion": prediction})
 
-app = Flask(__name__)
-CORS(app)  # Allow cross-origin (from React)
+    except Exception as e:
+        print("Prediction error:", e)
+        return jsonify({"error": "Could not get prediction"}), 500
 
-# Load pre-trained emotion model
-model = joblib.load('model.pkl')  # make sure model.pkl exists
-
-@app.route('/predict', methods=['POST'])
-def predict_emotion():
-    data = request.get_json()
-    text = data.get('text')
-
-    if not text:
-        return jsonify({'error': 'No text provided'}), 400
-
-    # Predict using the ML model
-    prediction = model.predict([text])[0]
-
+    # Predict emotion from text
+    prediction = model.predict([text])[0]  # model expects a list of texts
     return jsonify({'emotion': prediction})
 
 if __name__ == '__main__':

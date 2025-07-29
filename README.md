@@ -25,14 +25,24 @@ An intelligent retail application that leverages machine learning to provide pur
 
 ## 🛠️ Tech Stack
 
-| Component              | Technology                      | Purpose                               |
-| ---------------------- | ------------------------------- | ------------------------------------- | ------ |
-| **Frontend**           | Next.js 14                      |
-| **Styling**            | Tailwind CSS                    | Utility-first CSS framework           | ShadCn |
-| **Backend**            | FastAPI + Python 3.10+          |
-| **ML/AI**              | TensorFlow/PyTorch\*            | Machine learning models and inference |
-| **API Docs**           | Swagger UI                      | Interactive API documentation         |
-| **Package Management** | Poetry (Python) + npm (Node.js) | Dependency management                 |
+**Frontend**
+
+Next.js 14 + TypeScript - Modern React framework with SSR/SSG
+Tailwind CSS - Utility-first CSS framework
+
+**Backend**
+
+FastAPI + Python 3.10+ - High-performance async API framework
+Swagger UI - Interactive API documentation
+
+**ML/AI (Coming soon)**
+
+TensorFlow/PyTorch - Machine learning models and inference
+
+
+**Development Tools**
+
+Poetry (Python) + npm (Node.js) - Dependency management
 
 _\*Coming soon - check roadmap for updates_
 
@@ -46,12 +56,16 @@ ai-retail-intelligence/
 │   │   ├── 📁 pages/          # Application routes
 │   │   ├── 📁 hooks/          # Custom React hooks
 │   │   └── 📁 utils/          # Helper functions
-│   └── 📁 backend/            # FastAPI server
-│       ├── 📁 api/            # API route handlers
-│       ├── 📁 models/         # Data models and schemas
-│       ├── 📁 services/       # Business logic
-│       └── 📁 ml/             # ML model integration
-├── 📁 tests/                  # Test suites (frontend + backend)
+│   ├── 📁 backend/            # FastAPI server
+│   │   ├── 📁 api/            # API route handlers
+│   │   ├── 📁 schemas/        # Pydantic models and data validation
+│   │   ├── 📁 services/       # Business logic and API services
+│   │   └── 📁 core/           # Configuration and utilities
+│   └── 📁 models/             # ML models and AI components (coming soon)
+│       ├── 📁 training/       # Model training scripts
+│       ├── 📁 inference/      # Model inference and prediction
+│       └── 📁 preprocessing/  # Data preprocessing pipelines
+├── 📁 tests/                  # Test suites (frontend + backend + models)
 ├── 📁 scripts/                # Development and deployment scripts
 ├── 📁 playground/             # Jupyter notebooks for ML experiments
 ├── 📁 docs/                   # Additional documentation
@@ -115,64 +129,12 @@ The frontend will be available at `http://localhost:3000`
 2. Visit `http://localhost:8000/docs` - API documentation should be accessible
 3. Test the connection between frontend and backend
 
-## 🧪 Development
 
-### Running Tests
-
-```bash
-# Backend tests
-cd app/backend
-poetry run pytest
-
-# Frontend tests
-cd app/frontend
-npm test
-
-# Run all tests
-npm run test:all
-```
-
-### Code Quality
-
-```bash
-# Python linting and formatting
-cd app/backend
-poetry run black .
-poetry run flake8
-
-# TypeScript/JavaScript linting
-cd app/frontend
-npm run lint
-npm run type-check
-```
-
-### Development Scripts
-
-```bash
-# Start both frontend and backend
-npm run dev:all
-
-# Build for production
-npm run build
-
-# Run in production mode
-npm run start
-```
-
-```
 
 ## 📊 API Endpoints
 
 TBA
 
-
-## 🗺️ Roadmap
-
-- [ ] **Phase 1**: Core recommendation engine
-- [ ] **Phase 2**: Advanced ML models integration
-- [ ] **Phase 3**: Real-time data processing
-- [ ] **Phase 4**: Mobile app development
-- [ ] **Phase 5**: Enterprise features and scaling
 
 
 

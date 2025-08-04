@@ -57,7 +57,8 @@ top_rules = rules.sort_values(by="lift", ascending=False).head(10)
 
 **Code Example (Evaluation Visualization)**:
 
-**Frequent Itemsets Visualization**
+
+a. **Frequent Itemsets Visualization**
 
 ```python
 # Filter more than 1-item itemsets and get top 10 by support
@@ -88,7 +89,8 @@ plt.show()
 
 <img width="984" height="590" alt="image" src="https://github.com/user-attachments/assets/0795e93e-6ebd-4132-82fb-8b3fd6c50849" />
 
-**Rules Visualization**
+
+b. **Rules Visualization**
 
 ```python
 # Get top 10 rules by lift
@@ -121,7 +123,8 @@ plt.show()
 
 <img width="1004" height="590" alt="image" src="https://github.com/user-attachments/assets/1533eceb-e1db-48eb-9a21-4bcf89f19b56" />
 
-**Heatmap Visualization**
+
+c. **Heatmap Visualization**
 
 ```python
 # Convert frozensets to strings for better handling
@@ -155,6 +158,7 @@ plt.ylabel('Antecedents')
 plt.tight_layout()
 plt.show()
 ```
+
 <img width="971" height="790" alt="image" src="https://github.com/user-attachments/assets/ba2b63b1-a11a-4955-964f-3f5d6b59a977" />
 
 

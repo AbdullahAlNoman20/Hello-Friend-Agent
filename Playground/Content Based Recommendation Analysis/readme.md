@@ -1,6 +1,6 @@
-## Content-Based Recommendation Systems for H&M Products
+## Content-Based Recommendation Systems
 
-This project implements four content-based recommendation models to suggest similar products from the H&M dataset based on product attributes (`color` and `materials`). All models use **TF-IDF** (Term Frequency-Inverse Document Frequency) to extract features from a `tags` column, which combines lowercase color names (duplicated for emphasis) and cleaned material descriptions. The models differ in how they compute similarity and generate recommendations, but all are evaluated using **Precision@10** (Precision@K), which measures the fraction of relevant items (sharing the same color or at least one material) in the top-10 recommendations.
+This project implements four content-based recommendation models to suggest similar products based on product attributes (`color` and `materials`). All models use **TF-IDF** (Term Frequency-Inverse Document Frequency) to extract features from a `tags` column, which combines lowercase color names (duplicated for emphasis) and cleaned material descriptions. The models differ in how they compute similarity and generate recommendations, but all are evaluated using **Precision@10** (Precision@K), which measures the fraction of relevant items (sharing the same color or at least one material) in the top-10 recommendations.
 
 ### Dataset Preprocessing
 The H&M dataset (`handm.csv`) contains product details like `productName`, `colorName`, and `materials`. Preprocessing steps include:

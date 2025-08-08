@@ -1,0 +1,4 @@
+productId,productName,brandName,url,price,stockState,comingSoon,colorName,isOnline,colors,colorShades,newArrival,mainCatCode,details,materials
+SH001,Nike Air Max 270,Nike,https://example.com/nike-air-max-270,129.99,in stock,false,Black,true,"Black,White","Dark Black",false,SHOES,"Comfortable running shoes with Air Max technology","Mesh, Rubber"
+SH002,Adidas Ultraboost 22,Adidas,https://example.com/adidas-ultraboost-22,179.99,in stock,false,Blue,true,"Blue,White","Navy Blue",true,SHOES,"Premium running shoes with Boost technology","Primeknit, Boost"
+SH003,Puma RS-X,Puma,https://example.com/puma-rs-x,89.99,out of stock,false,Red,true,"Red,White","Bright Red",false,SHOES,"Retro-inspired sneakers","Leather, Mesh"
